@@ -4,8 +4,9 @@ int main()
 {
     int jump = 0, score = 0, cscore = 0;
     
-    while (cin >> jump)
+    while (1)
     {
+        cin >> jump;
         if (jump == 0)
         {
             break;
