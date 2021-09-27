@@ -2,25 +2,32 @@
 using namespace std;
 int main()
 {
-    int jump = 0, score = 0, cscore = 0;
-    
-    while (1)
+    const int ARR_MAX = 2050;
+    int* paStore = new int[ARR_MAX];
+    for (int i = 0; i < ARR_MAX; i++)
     {
-        cin >> jump;
-        if (jump == 0)
-        {
-            break;
-        }
-        if (jump == 1)
-        {
-            score++;
-            cscore = 0;
-        }
-        if (jump == 2)
-        {
-            cscore += 2;
-            score += cscore;
+        paStore[i] = 0;
+    }
+    
+    int n(0);
+    cin >> n;
+    int val(0);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> val;
+        paStore[val]++;
+    }
+
+    int numOccurrrences = paStore[0];
+    int numOccMax(0);
+    for (int i = 1; i < ARR_MAX; i++)
+    {
+        if(paStore[i] >= numOccurrrences){
+            numOccMax = i;
+            numOccurrrences = paStore[i];
         }
     }
-    cout << score;
+    
+    cout << numOccMax;
+    delete []paStore;
 }
