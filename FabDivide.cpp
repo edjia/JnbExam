@@ -10,16 +10,16 @@ int main()
     int fibMod[MAX_N][DA_LEN];
 
     int s(0), t(0), k[DA_LEN];
-// #if defined DEBUG
-//     s = 1;
-//     t = 5;
-//     k[0] = 2;
-//     k[1] = 3;
-//     k[2] = 5;
-//     k[3] = 7;
-// #elif
+#if defined DEBUG
+    s = 1;
+    t = 5;
+    k[0] = 2;
+    k[1] = 3;
+    k[2] = 5;
+    k[3] = 7;
+#elif
     cin >> s >> t >> k[0] >> k[1] >> k[2] >> k[3];
-// #endif
+#endif
     int curFibVal(0);
     for (int i = 0; i < t; i++)
     {
@@ -44,6 +44,7 @@ int main()
                 break;
             }
         }
-        if(!flag) cout << i + 1 << " ";
+        if (flag == 0)
+            cout << i + 1 << " ";
     }
 }
