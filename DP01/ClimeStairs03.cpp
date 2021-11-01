@@ -1,40 +1,33 @@
 #include <iostream>
+#define STEPS_MAX 4
+#define STAIRS_MAX 1000001
 using namespace std;
-
-#define MAX_STEPS 4
-int max_happy_value(int valus[], int size)
-{
-    if (size <= 0)
-    {
-        return 0;
-    }
-    else
-    {
-        int steps = size > MAX_STEPS ? MAX_STEPS : size;
-        int v_max = valus[0] + max_happy_value(&valus[1], size - 1);
-        for (int i = 1; i < steps; ++i)
-        {
-            int v = valus[i] + max_happy_value(&valus[i + 1], size - i - 1);
-            if (v > v_max)
-            {
-                v_max = v;
-            }
-        }
-        return v_max;
-    }
-}
-
 int main()
 {
-    int stairs = 0;    
-    cin >> stairs;
-    int vs[stairs];
-    for (int i = 0; i < stairs; i++)
-    {
-        cin >> vs[i];
-    }
-    
-    cout << max_happy_value(vs, stairs);
-
-    return 0;
+    long long *pF = new int[STAIRS_MAX], *pV = new int[STAIRS_MAX];
+	int a(0);
+	cin >> a;
+	
+	for (int i = 1; i <= a; i++)
+	{
+		cin >> pV[i];
+	}
+	pF[0] = 0;
+	
+	for (int i = 1; i <= a; i++)
+	{
+		int b = INT_MIN;
+		for (int j = 1; j <= STEPS_MAX; j++)
+		{
+			if (i - j < 0) break;
+			if (pF[i - j] > b)
+			{
+				b = pF[i - j];
+			}
+		}
+		pF[i] = b + pV[i];
+	}
+	cout << pF[a];
+    delete pF;
+    delete pV;
 }
