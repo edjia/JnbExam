@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
-
-#define MAX_STEPS 4
+#define MAX_STEPS 2
 int max_happy_value(int valus[], int size)
 {
     if (size <= 0)
@@ -26,15 +25,8 @@ int max_happy_value(int valus[], int size)
 
 int main()
 {
-    int stairs = 0;    
-    cin >> stairs;
-    int vs[stairs];
-    for (int i = 0; i < stairs; i++)
-    {
-        cin >> vs[i];
-    }
-    
-    cout << max_happy_value(vs, stairs);
-
+    int vs[] = {3, -2, -3, -4, -1};
+    int v = max_happy_value(vs, 5);
+    cout << v;
     return 0;
 }
