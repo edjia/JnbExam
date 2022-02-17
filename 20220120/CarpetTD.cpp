@@ -30,7 +30,7 @@ int main()
         if (px >= carpets[i].x && (px <= carpets[i].x + carpets[i].width) &&
             py >= carpets[i].y && (py <= carpets[i].y + carpets[i].height))
         {
-            overlayMax++;
+            overlayMax = i;
         }
     }
     if(overlayMax > -1) overlayMax++;
