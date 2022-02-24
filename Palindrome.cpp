@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    int x = 11111111;
+    int x = 123;
     int mod = 0;
     int revertNum = 0;
     int reverseNum = x;
@@ -16,5 +16,6 @@ int main()
         revertNum = revertNum * 10 + mod;
         x /= 10;
     }
+    cout << revertNum;
     return revertNum == reverseNum;
 }
