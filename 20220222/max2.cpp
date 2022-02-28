@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
 
-int maxCommonDiv(int a, int b)
+int gcd(int a, int b)
 {
     if (b != 0)
-        return maxCommonDiv(b, a % b);
+        return gcd(b, a % b);
     else
         return a;
 }
@@ -16,7 +16,7 @@ int main()
     cin >> x >> y;
     for (int i = 1; i * i < x * y; i++)
     {
-        if((x * y) % i == 0 && maxCommonDiv(i, (x * y) / i) == x){
+        if((x * y) % i == 0 && gcd(i, (x * y) / i) == x){
             sum++;
         }
     }
