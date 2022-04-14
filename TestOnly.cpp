@@ -21,7 +21,11 @@ using namespace std;
 const int inf = 0x7fffffff; //无限大
 int main()
 {
-    int f[maxn];
+    for (int i = 2; i <= sqrt(143); i++)
+    {
+        if(143 % i == 0)
+            cout << i * i - 1 << endl;
+    }
     
     return 0;
 }
