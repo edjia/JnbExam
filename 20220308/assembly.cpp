@@ -10,6 +10,7 @@ int main()
     {
         cin >> citiesPepoles[i];
     }
+    
     for (int i = 1; i <= cityNum; ++i)
     {
         cin >> citiesDistance[i];
